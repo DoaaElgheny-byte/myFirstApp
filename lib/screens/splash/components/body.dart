@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myFirstApp/component/custom_alert.dart';
 import 'package:myFirstApp/component/default_button.dart';
-
 import 'package:myFirstApp/screens/sign_in/sign_in_screen.dart';
 import 'package:myFirstApp/size_config.dart';
 
@@ -72,7 +71,7 @@ class _BodyState extends State<Body> {
                           context: context,
                           builder: (BuildContext context) => CustomDialoge(),
                         );
-                        // Navigator.pushNamed(context, SignInScreen.routeName);
+                        Navigator.pushNamed(context, SignInScreen.routeName);
                       },
                     ),
                     Spacer(),

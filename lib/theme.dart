@@ -15,8 +15,8 @@ ThemeData theme() {
 
 InputDecorationTheme inputDecorationTheme() {
   OutlineInputBorder outlineInputBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(10),
-    borderSide: BorderSide(color: Colors.white, width: 0),
+    borderRadius: BorderRadius.circular(28),
+    borderSide: BorderSide(color: kTextColor),
     gapPadding: 10,
   );
   return InputDecorationTheme(
@@ -24,10 +24,7 @@ InputDecorationTheme inputDecorationTheme() {
     // if you r using flutter less then 1.20.* then maybe this is not working properly
     // if we are define our floatingLabelBehavior in our theme then it's not applayed
     // floatingLabelBehavior: FloatingLabelBehavior.always,
-    //contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 20),
-    contentPadding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
-    filled: true,
-    fillColor: Colors.white,
+    contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 20),
     enabledBorder: outlineInputBorder,
     focusedBorder: outlineInputBorder,
     border: outlineInputBorder,
