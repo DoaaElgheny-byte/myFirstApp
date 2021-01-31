@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myFirstApp/component/default_button.dart';
 import 'package:myFirstApp/screens/forgot_password/forgot_password_screen.dart';
 import 'package:myFirstApp/screens/login_success/login_success_screen.dart';
+import 'package:myFirstApp/screens/visit/visit_screen.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
@@ -52,14 +53,14 @@ class _SignFormState extends State<SignForm> {
                   });
                 },
               ),
-              Text("Remember me"),
+              Text("تذكرني؟"),
               Spacer(),
               GestureDetector(
                 onTap: () => Navigator.pushNamed(
                     context, ForgotPasswordScreen.routeName),
                 child: Text(
-                  "Forgot Password",
-                  style: TextStyle(decoration: TextDecoration.underline),
+                  "نسيت كلمه المرور",
+                  style: TextStyle(decoration: TextDecoration.underline, color: kPrimaryColor),
                 ),
               )
             ],
@@ -67,12 +68,14 @@ class _SignFormState extends State<SignForm> {
           // FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(20)),
           DefaultButton(
-            text: "Continue",
+            text: "تسجيل دخول",
+            hasIcon:false,
+            iconName: null,
             press: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
                 // if all are valid then go to success screen
-                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                Navigator.pushNamed(context, VisitScreen.routeName);
               }
             },
           ),
@@ -104,8 +107,9 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Password",
-        hintText: "Enter your password",
+        labelText: "كلمه المرور",
+        hintText: "أدخل كلمه المرور",
+        hintStyle: TextStyle(color: Colors.black26, fontSize: 16),
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -137,8 +141,9 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Email",
-        hintText: "Enter your email",
+        labelText: "البريد الألكتروني",
+        hintText: "أدخل البريد الألكتروني",
+        hintStyle: TextStyle(color: Colors.black26, fontSize: 16),
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
