@@ -4,7 +4,7 @@ import 'package:myFirstApp/component/form_error.dart';
 import 'package:myFirstApp/component/no_account_text.dart';
 import 'package:myFirstApp/size_config.dart';
 
-import '../../../constants.dart';
+import '../../../../constants.dart';
 
 class Body extends StatelessWidget {
   @override

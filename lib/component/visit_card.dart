@@ -27,15 +27,15 @@ class VistCard extends StatelessWidget {
                       children: [
                         Image.asset(
                           image,
-                          height: getProportionateScreenWidth(100),
-                          width: getProportionateScreenWidth(100),
+                          height: getProportionateScreenWidth(70),
+                          width: getProportionateScreenWidth(70),
                         ),
                         Text(
                           title,
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: kPrimaryColor,
-                            fontSize: 28,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -50,24 +50,29 @@ class VistCard extends StatelessWidget {
                     elevation: 6,
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                     color: Colors.white,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          title,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: kPrimaryColor,
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: getProportionateScreenWidth(40),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            title,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: kPrimaryColor,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        Image.asset(
-                          image,
-                          height: getProportionateScreenWidth(100),
-                          width: getProportionateScreenWidth(100),
-                        ),  
-                      ],
+                          Image.asset(
+                            image,
+                            height: getProportionateScreenWidth(70),
+                            width: getProportionateScreenWidth(70),
+                          ),
+                        ],
+                      ),
                     )),
               ));
   }

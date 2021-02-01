@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../size_config.dart';
+import '../../../../size_config.dart';
 import 'sign_form.dart';
 
 class Body extends StatelessWidget {
@@ -23,7 +23,7 @@ class Body extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                
+
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
                 SignForm(),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myFirstApp/component/default_button.dart';
-import 'package:myFirstApp/screens/forgot_password/forgot_password_screen.dart';
-import 'package:myFirstApp/screens/login_success/login_success_screen.dart';
-import 'package:myFirstApp/screens/visit/visit_screen.dart';
-import '../../../constants.dart';
-import '../../../size_config.dart';
+import 'package:myFirstApp/screens/auth/forgot_password/forgot_password_screen.dart';
+import 'package:myFirstApp/screens/home/home_screen.dart';
+import '../../../../constants.dart';
+import '../../../../size_config.dart';
 
 class SignForm extends StatefulWidget {
   @override
@@ -60,7 +59,9 @@ class _SignFormState extends State<SignForm> {
                     context, ForgotPasswordScreen.routeName),
                 child: Text(
                   "نسيت كلمه المرور",
-                  style: TextStyle(decoration: TextDecoration.underline, color: kPrimaryColor),
+                  style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      color: kPrimaryColor),
                 ),
               )
             ],
@@ -69,13 +70,13 @@ class _SignFormState extends State<SignForm> {
           SizedBox(height: getProportionateScreenHeight(20)),
           DefaultButton(
             text: "تسجيل دخول",
-            hasIcon:false,
+            hasIcon: false,
             iconName: null,
             press: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
                 // if all are valid then go to success screen
-                Navigator.pushNamed(context, VisitScreen.routeName);
+                Navigator.pushNamed(context, HomeScreen.routeName);
               }
             },
           ),
