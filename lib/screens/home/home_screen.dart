@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
             title: Column(
               children: [
                 Text(
-                  ' وشركاءه الحج عجه',
+                  ' وشركاءمحمد  السيد',
                   style: TextStyle(color: Colors.black, fontSize: 24),
                 ),
                 Text(

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myFirstApp/component/default_button.dart';
-import 'package:myFirstApp/screens/notification/notification_screen.dart';
-import 'package:myFirstApp/size_config.dart';
+
 
 class Body extends StatelessWidget {
   @override
