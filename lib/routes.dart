@@ -5,6 +5,7 @@ import 'package:myFirstApp/screens/intro/splash.dart';
 import 'package:myFirstApp/screens/intro/welcomeScreen.dart';
 
 import 'package:myFirstApp/screens/auth/sign_in/sign_in_screen.dart';
+import 'package:myFirstApp/screens/notification/notification_screen.dart';
 import 'package:myFirstApp/screens/visit/visit_screen.dart';
 
 // We use name route
@@ -17,5 +18,6 @@ final Map<String, WidgetBuilder> routes = {
   SignInScreen.routeName: (context) => SignInScreen(),
   ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
   VisitScreen.routeName: (context) => VisitScreen(),
-  HomeScreen.routeName: (context) => HomeScreen()
+  HomeScreen.routeName: (context) => HomeScreen(),
+  NotificationScreen.routeName: (context) => NotificationScreen()
 };

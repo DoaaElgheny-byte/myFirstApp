@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myFirstApp/component/default_button.dart';
 import 'package:myFirstApp/screens/auth/forgot_password/forgot_password_screen.dart';
 import 'package:myFirstApp/screens/home/home_screen.dart';
+import 'package:myFirstApp/screens/notification/notification_screen.dart';
 import '../../../../constants.dart';
 import '../../../../size_config.dart';
 
