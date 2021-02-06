@@ -7,23 +7,23 @@ class DrawerItem extends StatelessWidget {
   DrawerItem({this.title, this.icon, this.tabHandler});
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [ListTile(
+    return Column(children: [
+      ListTile(
         leading: Icon(
           icon,
-          size: 24,
-          color: Colors.pink,
+          size: 23,
+          color: Color(0xffFF27AE60),
         ),
         title: Text(title,
             style: TextStyle(
-              color: Colors.pink,
-              fontSize: 20,
-              fontWeight: FontWeight.w800
-        )),
-       onTap: tabHandler,     
+                color: Colors.black,
+                fontSize: 15,
+                fontWeight: FontWeight.w500)),
+        onTap: tabHandler,
       ),
-      Divider(color: Colors.black45,)
-    ]
-    );
+      // Divider(
+      //   color: Colors.black45,
+      // )
+    ]);
   }
 }

@@ -1,78 +1,141 @@
 import 'package:flutter/material.dart';
+import 'package:date_picker_timeline/date_picker_timeline.dart';
+import 'package:myFirstApp/component/custom_card.dart';
+import 'package:myFirstApp/models/visit_model.dart';
+import 'package:myFirstApp/size_config.dart';
 
+class Body extends StatefulWidget {
+  @override
+  _BodyState createState() => _BodyState();
+}
 
-class Body extends StatelessWidget {
+class _BodyState extends State<Body> {
+  final List<VisitModel> visitData = [
+    VisitModel(
+        id: 0,
+        companyname: 'شركة الحمد',
+        image: 'assets/images/delivery-truck.png'),
+    VisitModel(
+        id: 1,
+        companyname: 'شركة الجهيني',
+        image: 'assets/images/delivery-truck.png'),
+    VisitModel(
+        id: 0,
+        companyname: 'شركة الحمد',
+        image: 'assets/images/delivery-truck.png'),
+    VisitModel(
+        id: 1,
+        companyname: 'شركة الجهيني',
+        image: 'assets/images/delivery-truck.png'),
+    VisitModel(
+        id: 0,
+        companyname: 'شركة الحمد',
+        image: 'assets/images/delivery-truck.png'),
+    VisitModel(
+        id: 1,
+        companyname: 'شركة الجهيني',
+        image: 'assets/images/delivery-truck.png'),
+    VisitModel(
+        id: 0,
+        companyname: 'شركة الحمد',
+        image: 'assets/images/delivery-truck.png'),
+    VisitModel(
+        id: 1,
+        companyname: 'شركة الجهيني',
+        image: 'assets/images/delivery-truck.png'),
+    VisitModel(
+        id: 0,
+        companyname: 'شركة الحمد',
+        image: 'assets/images/delivery-truck.png'),
+    VisitModel(
+        id: 1,
+        companyname: 'شركة الجهيني',
+        image: 'assets/images/delivery-truck.png'),
+  ];
+  DateTime _selectedValue = DateTime.now();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color(0xffFF27AE60),
-      width: double.infinity,
-      height: double.infinity,
-      child: Column(
+    return Column(crossAxisAlignment: CrossAxisAlignment.start,
+        // mainAxisSize: MainAxisSize.values[100],
         children: [
-          // Align(
-          //   alignment: Alignment.bottomCenter,
-          //   child: Container(
-          //       width: double.infinity,
-          //       height: MediaQuery.of(context).size.height * 0.294,
-          //       decoration: BoxDecoration(
-          //           borderRadius: BorderRadius.only(
-          //               topLeft: Radius.circular(40),
-          //               topRight: Radius.circular(40)),
-          //           color: Colors.white),
-          //       child: Column(
-          //         children: [
-          //           Padding(
-          //             padding: EdgeInsets.only(
-          //                 top: getProportionateScreenHeight(20)),
-          //             child: Text(
-          //               'مرحبا بك في التطبيق',
-          //               style: TextStyle(
-          //                   color: Colors.black,
-          //                   fontSize:
-          //                       Theme.of(context).textTheme.bodyText1.fontSize,
-          //                   fontWeight: Theme.of(context)
-          //                       .textTheme
-          //                       .bodyText1
-          //                       .fontWeight),
-          //             ),
-          //           ),
-          //           Container(
-          //             alignment: Alignment.center,
-          //             padding: EdgeInsets.symmetric(
-          //                 horizontal: getProportionateScreenWidth(40),
-          //                 vertical: getProportionateScreenHeight(10)),
-          //             child: Text(
-          //               'لوريم إيبسوم هو ببساطة نص شكلي بمعنى أن الغاية هي الشكل وليس المحتوى ويستخدم في صناعات المطابع ودور النشر.',
-          //               textAlign: TextAlign.center,
-          //               style: TextStyle(
-          //                   color: Colors.black,
-          //                   fontSize:
-          //                       Theme.of(context).textTheme.bodyText2.fontSize,
-          //                   fontWeight: Theme.of(context)
-          //                       .textTheme
-          //                       .bodyText2
-          //                       .fontWeight),
-          //             ),
-          //           ),
-          //           Padding(
-          //             padding: const EdgeInsets.symmetric(
-          //                 horizontal: 35.0, vertical: 2),
-          //             child: DefaultButton(
-          //               text: 'تسجيل الدخول',
-          //               hasIcon: true,
-          //               iconName: Icons.arrow_back_sharp,
-          //               press: () {
-          //                 Navigator.pushNamed(
-          //                     context, NotificationScreen.routeName);
-          //               },
-          //             ),
-          //           ),
-          //         ],
-          //       )),
-          // ),
-        ],
-      ),
-    );
+          Padding(
+            padding: EdgeInsets.only(top: 0, bottom: 20),
+            child: SizedBox(
+              child: Container(
+                color: Color(0xffFF27AE60),
+                height: 100,
+                width: double.infinity,
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: DatePicker(
+                    DateTime.now(),
+                    width: getProportionateScreenWidth(55),
+                    height: getProportionateScreenHeight(65),
+                    controller: null,
+                    initialSelectedDate: this._selectedValue,
+                    selectionColor: Colors.black26,
+                    selectedTextColor: Colors.white,
+                    // inactiveDates: [
+                    //   DateTime.now().add(Duration(days: 3)),
+                    //   DateTime.now().add(Duration(days: 4)),
+                    //   DateTime.now().add(Duration(days: 7))
+                    // ],
+                    onDateChange: (date) {
+                      // New date selected
+                      setState(() {
+                        this._selectedValue = date;
+                      });
+                    },
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SingleChildScrollView(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: double.infinity,
+                height: getProportionateScreenHeight(580),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        topRight: Radius.circular(40))),
+                child: Padding(
+                    padding: const EdgeInsets.only(
+                        top: 15, right: 10, left: 10, bottom: 5),
+                    child: Column(children: [
+                      Align(
+                        alignment: Alignment(0.9, 1),
+                        child: FlatButton.icon(
+                          onPressed: null,
+                          shape: RoundedRectangleBorder(
+                              side: BorderSide(
+                                  color: Colors.green,
+                                  width: 1,
+                                  style: BorderStyle.solid),
+                              borderRadius: BorderRadius.circular(5)),
+                          icon: Icon(
+                            Icons.sort,
+                            color: Colors.green,
+                            size: 25,
+                          ),
+                          label: Text('قيد التنفيذ',
+                              style: TextStyle(color: Colors.green)),
+                        ),
+                      ),
+                      SizedBox(
+                        height: getProportionateScreenHeight(450),
+                        child: ListView.builder(
+                            itemBuilder: (context, index) =>
+                                CustomCard(visitData[index]),
+                            itemCount: visitData.length),
+                      )
+                    ])),
+              ),
+            ),
+          ),
+        ]);
   }
 }

@@ -5,6 +5,7 @@ import 'package:myFirstApp/constants.dart';
 import 'package:myFirstApp/screens/home/components/body.dart';
 import 'package:badges/badges.dart';
 import 'package:myFirstApp/screens/notification/notification_screen.dart';
+import 'package:myFirstApp/screens/visit/visit_screen.dart';
 import 'package:myFirstApp/size_config.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,10 +14,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Direction(Scaffold(
+        backgroundColor: Color(0xffFF27AE60),
         key: _scaffoldKey,
         drawer: MainDrawer(),
         appBar: AppBar(
-            toolbarHeight: 55,
+            toolbarHeight: getProportionateScreenHeight(60),
             centerTitle: true,
             title: Column(
               children: [
@@ -27,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                 Text(
                   'اهلا',
                   style: TextStyle(color: Colors.white, fontSize: 18),
-                )
+                ),
               ],
             ),
             actions: [
@@ -97,6 +99,8 @@ class HomeScreen extends StatelessWidget {
             elevation: 0.0,
             child: new Icon(Icons.add),
             backgroundColor: kPrimaryColor,
-            onPressed: () {})));
+            onPressed: () {
+              Navigator.pushNamed(context, VisitScreen.routeName);
+            })));
   }
 }
