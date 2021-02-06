@@ -18,11 +18,12 @@ class _BodyState extends State<Body> {
       Container(
         height: getProportionateScreenHeight(450),
         margin: EdgeInsets.symmetric(
-            horizontal: getProportionateScreenWidth(20),
+            horizontal: getProportionateScreenWidth(15),
             vertical: getProportionateScreenHeight(5)),
         child: GridView.count(
-          crossAxisSpacing: 15,
-          mainAxisSpacing: 15,
+          crossAxisSpacing: getProportionateScreenHeight(40),
+          mainAxisSpacing: getProportionateScreenWidth(5),
+          childAspectRatio: 1,
           crossAxisCount: 2,
           children: <Widget>[
             VistCard(
@@ -48,8 +49,8 @@ class _BodyState extends State<Body> {
         padding: EdgeInsets.only(
             right: 15,
             left: 15,
-            top: getProportionateScreenHeight(5),
-            bottom: getProportionateScreenHeight(20)),
+            top: getProportionateScreenHeight(10),
+            bottom: getProportionateScreenHeight(10)),
         child: VistCard(
             image: "assets/images/delivery-truck.png",
             title: "تسليم",

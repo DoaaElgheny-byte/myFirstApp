@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myFirstApp/component/Drawer_item.dart';
+import 'package:myFirstApp/screens/visit/visit_screen.dart';
 import 'package:myFirstApp/size_config.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -32,21 +33,26 @@ class MainDrawer extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(right: 10, top: 10, bottom: 0),
-                    child: Row(children: [
-                      Image.asset(
-                        'assets/images/Profile Image.png',
-                        height: 70,
-                        width: 70,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(right: 10),
-                        child: Text("Ahmed@gmail.com",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500)),
-                      ),
-                    ]),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: Image.asset(
+                            'assets/images/Profile Image.png',
+                            height: 70,
+                            width: 70,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Text("Ahmed@gmail.com",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w500)),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -56,7 +62,7 @@ class MainDrawer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(right: 20, top: 20),
+                  padding: EdgeInsets.only(right: 20, top: 10),
                   child: Text("Ahmed@gmail.com",
                       style: TextStyle(
                           color: Colors.black,
@@ -81,51 +87,48 @@ class MainDrawer extends StatelessWidget {
             DrawerItem(
                 title: 'زيارة عميل',
                 icon: Icons.verified_user_outlined,
-                tabHandler: () {}
-                // Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName)
-                ),
+                tabHandler: () =>
+                    Navigator.pushNamed(context, VisitScreen.routeName)),
             DrawerItem(
                 title: 'استلام بضاعة من المخزن',
                 icon: Icons.filter_alt_rounded,
-                tabHandler: () {}
-                // Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName)
-                ),
+                tabHandler: () =>
+                    Navigator.pushNamed(context, VisitScreen.routeName)),
             DrawerItem(
                 title: 'ترجيع بضاعه للمخزن',
                 icon: Icons.inventory,
-                tabHandler: () {}
-                // Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName)
-                ),
+                tabHandler: () =>
+                    Navigator.pushNamed(context, VisitScreen.routeName)),
             DrawerItem(
                 title: 'تحويل بضاعة لمندوب',
                 icon: Icons.transform_outlined,
-                tabHandler: () {}
-                // Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName)
-                ),
+                tabHandler: () =>
+                    Navigator.pushNamed(context, VisitScreen.routeName)),
             DrawerItem(
                 title: 'استلام بضاعه من المندوب',
                 icon: Icons.delivery_dining,
-                tabHandler: () {}
-                // Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName)
-                ),
+                tabHandler: () =>
+                    Navigator.pushNamed(context, VisitScreen.routeName)),
             DrawerItem(
                 title: 'عهده البضائع الحالية',
                 icon: Icons.delivery_dining,
-                tabHandler: () {}
-                // Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName)
-                ),
+                tabHandler: () =>
+                    Navigator.pushNamed(context, VisitScreen.routeName)),
             DrawerItem(
                 title: 'كشف التحصيلات النقدية',
                 icon: Icons.money_rounded,
-                tabHandler: () {}
-                // Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName)
-                ),
-            DrawerItem(title: 'عملائي ', icon: Icons.people, tabHandler: () {}
-                // Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName)
-                ),
-            DrawerItem(title: 'عن التطبيق ', icon: Icons.info, tabHandler: () {}
-                // Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName)
-                ),
+                tabHandler: () =>
+                    Navigator.pushNamed(context, VisitScreen.routeName)),
+            DrawerItem(
+                title: 'عملائي ',
+                icon: Icons.people,
+                tabHandler: () =>
+                    Navigator.pushNamed(context, VisitScreen.routeName)),
+            DrawerItem(
+                title: 'عن التطبيق ',
+                icon: Icons.info,
+                tabHandler: () =>
+                    Navigator.pushNamed(context, VisitScreen.routeName)),
           ],
         ),
       ),

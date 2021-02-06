@@ -52,7 +52,7 @@ class VistCard extends StatelessWidget {
                     color: Colors.white,
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: getProportionateScreenWidth(40),
+                        horizontal: getProportionateScreenWidth(30),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
