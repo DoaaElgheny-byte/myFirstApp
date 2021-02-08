@@ -5,13 +5,20 @@ import '../size_config.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton(
-      {Key key, this.text, this.press, this.width, this.hasIcon, this.iconName})
+      {Key key,
+      this.text,
+      this.press,
+      this.width,
+      this.hasIcon,
+      this.iconName,
+      this.color = kPrimaryColor})
       : super(key: key);
   final String text;
   final double width;
   final Function press;
   final bool hasIcon;
   final IconData iconName;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +32,7 @@ class DefaultButton extends StatelessWidget {
               color: kPrimaryColor,
               onPressed: press,
               icon: Padding(
-                padding: const EdgeInsets.only(right:100.0),
+                padding: const EdgeInsets.only(right: 100.0),
                 child: Icon(
                   iconName,
                   color: Colors.white,
@@ -42,7 +49,7 @@ class DefaultButton extends StatelessWidget {
           : FlatButton(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
-              color: kPrimaryColor,
+              color: color,
               onPressed: press,
               child: Text(
                 text,

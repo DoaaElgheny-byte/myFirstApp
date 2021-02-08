@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myFirstApp/component/default_button.dart';
 import 'package:myFirstApp/component/footer.dart';
 import 'package:myFirstApp/component/header.dart';
 import 'package:myFirstApp/component/item_Card.dart';
@@ -76,7 +77,26 @@ class Body extends StatelessWidget {
                 Expanded(
                   child: Align(
                       alignment: Alignment.bottomCenter,
-                      child: Footer(Text('ccccccccccc')) // Your footer widget
+                      child: Footer(Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: getProportionateScreenWidth(15),
+                            vertical: getProportionateScreenHeight(15)),
+                        child: DefaultButton(
+                          hasIcon: false,
+                          iconName: null,
+                          color: Colors.green,
+                          text: paramsData == 1
+                              ? 'تسليم'
+                              : paramsData == 3
+                                  ? 'مرتجع'
+                                  : paramsData == 4
+                                      ? 'جرد'
+                                      : '',
+                          press: () {
+                            // Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                          },
+                        ),
+                      )) // Your footer widget
                       ),
                 ),
               ],

@@ -91,7 +91,7 @@ class _ItemCardState extends State<ItemCard> {
                             onTap: increaseCounter,
                             child: Container(
                                 width: getProportionateScreenWidth(28),
-                                height: getProportionateScreenHeight(28),
+                                height: getProportionateScreenHeight(30),
                                 decoration: BoxDecoration(
                                   color: Colors.green.withOpacity(0.2),
                                   borderRadius:
@@ -104,7 +104,8 @@ class _ItemCardState extends State<ItemCard> {
                                 )),
                           ),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: getProportionateScreenWidth(20)),
                             child: Text('$counter'),
                           ),
                           InkWell(
@@ -117,36 +118,34 @@ class _ItemCardState extends State<ItemCard> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(3)),
                                 ),
-                                child: Text(
-                                  '-',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontSize: 35,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w400),
+                                child: Icon(
+                                  Icons.remove,
+                                  color: Colors.black,
+                                  size: 18,
                                 )),
                           ),
                           Row(
                             children: [
                               Padding(
-                                padding:
-                                    const EdgeInsets.only(right: 20, left: 10),
+                                padding: EdgeInsets.only(
+                                    right: getProportionateScreenWidth(20),
+                                    left: getProportionateScreenWidth(10)),
                                 child: Text(
                                   'عنب',
                                   style: TextStyle(color: kPrimaryColor),
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 5),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: getProportionateScreenWidth(5)),
                                 child: Text(
                                   '$counter X',
                                   style: TextStyle(color: Colors.black),
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 5),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: getProportionateScreenWidth(5)),
                                 child: Text(
                                   '  200 ر.ل',
                                   style: TextStyle(color: kPrimaryColor),
@@ -167,11 +166,14 @@ class _ItemCardState extends State<ItemCard> {
                           Container(
                             width: getProportionateScreenWidth(120),
                             height: getProportionateScreenHeight(45),
-                            padding: const EdgeInsets.all(4.0),
+                            padding:
+                                EdgeInsets.all(getProportionateScreenHeight(3)),
                             decoration: BoxDecoration(
                                 shape: BoxShape.rectangle,
                                 color: Colors.white,
-                                border: Border.all(width: 1.0, color: Colors.grey.withOpacity(0.3)),
+                                border: Border.all(
+                                    width: 1.0,
+                                    color: Colors.grey.withOpacity(0.3)),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(5))),
                             child: TextField(
@@ -189,12 +191,13 @@ class _ItemCardState extends State<ItemCard> {
                                 hintText: "إضافه خصم",
                                 enabledBorder: InputBorder.none,
                                 focusedBorder: InputBorder.none,
-                                contentPadding: EdgeInsets.all(3),
+                                contentPadding: EdgeInsets.all(10),
                               ),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top :25.5),
+                            padding: EdgeInsets.only(
+                                top: getProportionateScreenHeight(25.5)),
                             child: Container(
                                 width: getProportionateScreenWidth(100),
                                 height: getProportionateScreenHeight(40),
@@ -204,7 +207,8 @@ class _ItemCardState extends State<ItemCard> {
                                       BorderRadius.all(Radius.circular(5)),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.only(top: 15.0),
+                                  padding: EdgeInsets.only(
+                                      top: getProportionateScreenHeight(15)),
                                   child: Text(
                                     '200 ر.ل',
                                     textAlign: TextAlign.center,
