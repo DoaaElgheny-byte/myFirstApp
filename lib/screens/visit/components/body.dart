@@ -32,16 +32,16 @@ class _BodyState extends State<Body> {
                 flag: 1),
             VistCard(
                 image: "assets/images/delivery-truck.png",
-                title: "تسليم",
-                flag: 1),
+                title: "تحصيل",
+                flag: 2),
             VistCard(
                 image: "assets/images/delivery-truck.png",
-                title: "تسليم",
-                flag: 1),
+                title: "مرتجع",
+                flag: 3),
             VistCard(
                 image: "assets/images/delivery-truck.png",
-                title: "تسليم",
-                flag: 1),
+                title: "جرد",
+                flag: 4),
           ],
         ),
       ),

@@ -11,11 +11,11 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  @override
-  void initState() {
-    super.initState();
-    CarService().getList().then((value) => print(value));
-  }
+  // @override
+  // void initState() {
+  // super.initState();
+  // CarService().getList().then((value) => print(value));
+  // }
 
   final List<VisitModel> visitData = [
     VisitModel(

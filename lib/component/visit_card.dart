@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myFirstApp/constants.dart';
+import 'package:myFirstApp/screens/visit_cycle/visit_cycle_screen.dart';
 import 'package:myFirstApp/size_config.dart';
 
 class VistCard extends StatelessWidget {
@@ -16,6 +17,8 @@ class VistCard extends StatelessWidget {
         child: isGrid
             ? InkWell(
                 onTap: () {
+                  Navigator.of(context)
+                      .pushNamed(VisitCycleScreen.routeName, arguments: flag);
                   // onCardPress();
                 },
                 child: Material(
@@ -55,8 +58,13 @@ class VistCard extends StatelessWidget {
                         horizontal: getProportionateScreenWidth(30),
                       ),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
+                          Image.asset(
+                            image,
+                            height: getProportionateScreenWidth(70),
+                            width: getProportionateScreenWidth(70),
+                          ),
                           Text(
                             title,
                             textAlign: TextAlign.center,
@@ -65,11 +73,6 @@ class VistCard extends StatelessWidget {
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
-                          ),
-                          Image.asset(
-                            image,
-                            height: getProportionateScreenWidth(70),
-                            width: getProportionateScreenWidth(70),
                           ),
                         ],
                       ),
