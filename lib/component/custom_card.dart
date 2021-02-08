@@ -3,6 +3,7 @@ import 'package:myFirstApp/common/CircluarButton.dart';
 import 'package:myFirstApp/component/dotted_seperatot.dart';
 import 'package:myFirstApp/constants.dart';
 import 'package:myFirstApp/models/visit_model.dart';
+import 'package:myFirstApp/screens/visit_cycle/visit_cycle_screen.dart';
 import 'package:myFirstApp/size_config.dart';
 
 class CustomCard extends StatelessWidget {
@@ -73,17 +74,20 @@ class CustomCard extends StatelessWidget {
                     CircluarButton(
                       buttonImg: 'assets/images/Group28972.png',
                       buttonTxt: 'تسليم',
-                      onButtonPressed: () {},
+                      onButtonPressed: () =>Navigator.of(context)
+                      .pushNamed(VisitCycleScreen.routeName, arguments: 1),
                     ),
                     CircluarButton(
                       buttonImg: 'assets/images/Group28972.png',
                       buttonTxt: 'مرتجع',
-                      onButtonPressed: () {},
+                      onButtonPressed: () =>Navigator.of(context)
+                      .pushNamed(VisitCycleScreen.routeName, arguments: 3),
                     ),
                     CircluarButton(
                       buttonImg: 'assets/images/Group28972.png',
                       buttonTxt: 'جرد',
-                      onButtonPressed: () {},
+                      onButtonPressed: () =>Navigator.of(context)
+                      .pushNamed(VisitCycleScreen.routeName, arguments: 4),
                     )
                   ],
                 )
