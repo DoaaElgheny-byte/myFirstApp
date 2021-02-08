@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myFirstApp/component/Drawer_item.dart';
+import 'package:myFirstApp/screens/customers/customers_screen.dart';
 import 'package:myFirstApp/screens/visit/visit_screen.dart';
 import 'package:myFirstApp/size_config.dart';
 
@@ -123,7 +124,7 @@ class MainDrawer extends StatelessWidget {
                 title: 'عملائي ',
                 icon: Icons.people,
                 tabHandler: () =>
-                    Navigator.pushNamed(context, VisitScreen.routeName)),
+                    Navigator.pushNamed(context, CustomersScreen.routeName)),
             DrawerItem(
                 title: 'عن التطبيق ',
                 icon: Icons.info,

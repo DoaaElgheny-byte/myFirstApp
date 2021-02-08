@@ -7,15 +7,7 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Direction(Scaffold(
-      // appBar: AppBar(
-      //   title: Text("home"),
-      // ),
       body: Body(),
-      // floatingActionButton: new FloatingActionButton(
-      //     elevation: 0.0,
-      //     child: new Icon(Icons.add),
-      //     backgroundColor: kPrimaryColor,
-      //     onPressed: () {})
     ));
   }
 }

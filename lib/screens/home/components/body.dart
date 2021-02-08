@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:myFirstApp/component/custom_card.dart';
 import 'package:myFirstApp/models/visit_model.dart';
+import 'package:myFirstApp/services/car.dart';
 import 'package:myFirstApp/size_config.dart';
 
 class Body extends StatefulWidget {
@@ -10,6 +11,12 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  @override
+  void initState() {
+    super.initState();
+    CarService().getList().then((value) => print(value));
+  }
+
   final List<VisitModel> visitData = [
     VisitModel(
         id: 0,
