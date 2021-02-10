@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myFirstApp/component/Drawer_item.dart';
 import 'package:myFirstApp/screens/customers/customers_screen.dart';
+import 'package:myFirstApp/screens/recieveCycle/recieve_cycle_screen.dart';
 import 'package:myFirstApp/screens/visit/visit_screen.dart';
 import 'package:myFirstApp/screens/visit_cycle/visit_cycle_screen.dart';
 import 'package:myFirstApp/size_config.dart';
@@ -95,7 +96,7 @@ class MainDrawer extends StatelessWidget {
                 title: 'استلام بضاعة من المخزن',
                 icon: Icons.filter_alt_rounded,
                 tabHandler: () =>
-                    Navigator.pushNamed(context, VisitCycleScreen.routeName)),
+                    Navigator.pushNamed(context, RecieveCycleScreen.routeName)),
             DrawerItem(
                 title: 'ترجيع بضاعه للمخزن',
                 icon: Icons.inventory,

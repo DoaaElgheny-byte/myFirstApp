@@ -8,6 +8,7 @@ import 'package:myFirstApp/screens/intro/welcomeScreen.dart';
 
 import 'package:myFirstApp/screens/auth/sign_in/sign_in_screen.dart';
 import 'package:myFirstApp/screens/notification/notification_screen.dart';
+import 'package:myFirstApp/screens/recieveCycle/recieve_cycle_screen.dart';
 import 'package:myFirstApp/screens/visit/visit_screen.dart';
 import 'package:myFirstApp/screens/visit_cycle/visit_cycle_screen.dart';
 
@@ -25,5 +26,6 @@ final Map<String, WidgetBuilder> routes = {
   NotificationScreen.routeName: (context) => NotificationScreen(),
   CustomersScreen.routeName: (context) => CustomersScreen(),
   NewCustomerScreen.routeName: (context) => NewCustomerScreen(),
-  VisitCycleScreen.routeName: (context) => VisitCycleScreen()
+  VisitCycleScreen.routeName: (context) => VisitCycleScreen(),
+  RecieveCycleScreen.routeName: (context) => RecieveCycleScreen()
 };

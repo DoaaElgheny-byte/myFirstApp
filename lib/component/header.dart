@@ -27,24 +27,34 @@ class Header extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   InkWell(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Icon(
-                      rightIconName,
-                      color: Colors.white,
-                    ),
-                  ),
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: getProportionateScreenHeight(15),
+                            right: getProportionateScreenWidth(10)),
+                        child: Icon(
+                          rightIconName,
+                          color: Colors.white,
+                        ),
+                      )),
                   SizedBox(
                     width: getProportionateScreenWidth(5),
                   ),
-                  Text(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: getProportionateScreenWidth(20),
-                      color: Colors.white,
+                  Padding(
+                    padding: EdgeInsets.only(
+                        top: getProportionateScreenHeight(15),
+                        left: getProportionateScreenWidth(25),
+                        right: getProportionateScreenWidth(5)),
+                    child: Text(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   leftIconName != null
@@ -57,7 +67,7 @@ class Header extends StatelessWidget {
                               children: leftIconName),
                         )
                       : SizedBox(
-                          width: getProportionateScreenWidth(70),
+                          width: getProportionateScreenWidth(50),
                         )
                 ]),
           ),
