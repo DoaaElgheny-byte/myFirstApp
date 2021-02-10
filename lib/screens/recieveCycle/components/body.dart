@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:myFirstApp/component/default_button.dart';
 import 'package:myFirstApp/component/header.dart';
 import 'package:myFirstApp/component/recieve_card.dart';
-import 'package:myFirstApp/component/visit_card.dart';
 import 'package:myFirstApp/models/recieve_model.dart';
 import 'package:myFirstApp/size_config.dart';
 // This is the best practice
