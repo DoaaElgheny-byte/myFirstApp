@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myFirstApp/component/Drawer_item.dart';
+import 'package:myFirstApp/screens/auth/profile/profile_screen.dart';
 import 'package:myFirstApp/screens/customers/customers_screen.dart';
 import 'package:myFirstApp/screens/recieveCycle/recieve_cycle_screen.dart';
 import 'package:myFirstApp/screens/visit/visit_screen.dart';
@@ -39,10 +40,16 @@ class MainDrawer extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(top: 10),
-                          child: Image.asset(
-                            'assets/images/Profile Image.png',
-                            height: 70,
-                            width: 70,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, ProfileScreen.routeName);
+                            },
+                            child: Image.asset(
+                              'assets/images/Profile Image.png',
+                              height: 70,
+                              width: 70,
+                            ),
                           ),
                         ),
                         Padding(
@@ -94,13 +101,15 @@ class MainDrawer extends StatelessWidget {
             DrawerItem(
                 title: 'استلام بضاعة من المخزن',
                 icon: Icons.filter_alt_rounded,
-                tabHandler: () =>
-                    Navigator.pushNamed(context, RecieveCycleScreen.routeName, arguments: false)),
+                tabHandler: () => Navigator.pushNamed(
+                    context, RecieveCycleScreen.routeName,
+                    arguments: false)),
             DrawerItem(
                 title: 'ترجيع بضاعه للمخزن',
                 icon: Icons.inventory,
-                tabHandler: () =>
-                    Navigator.pushNamed(context, RecieveCycleScreen.routeName, arguments: true)),
+                tabHandler: () => Navigator.pushNamed(
+                    context, RecieveCycleScreen.routeName,
+                    arguments: true)),
             DrawerItem(
                 title: 'تحويل بضاعة لمندوب',
                 icon: Icons.transform_outlined,

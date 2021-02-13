@@ -77,7 +77,8 @@ class Body extends StatelessWidget {
                 Expanded(
                   child: Align(
                       alignment: Alignment.bottomCenter,
-                      child: Footer(Padding(
+                      child: Footer(
+                          widgetItem: Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: getProportionateScreenWidth(15),
                             vertical: getProportionateScreenHeight(15)),
