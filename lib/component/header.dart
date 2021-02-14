@@ -59,8 +59,8 @@ class Header extends StatelessWidget {
                   ),
                   leftIconName != null
                       ? SizedBox(
-                          width: getProportionateScreenWidth(100),
-                          height: getProportionateScreenHeight(100),
+                          width: getProportionateScreenWidth(40),
+                          height: getProportionateScreenHeight(70),
                           child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.start,

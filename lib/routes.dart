@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:myFirstApp/screens/auth/forgot_password/forgot_password_screen.dart';
+import 'package:myFirstApp/screens/auth/profile/edit_profile_screen.dart';
 import 'package:myFirstApp/screens/auth/profile/profile_screen.dart';
 import 'package:myFirstApp/screens/customers/customers_screen.dart';
 import 'package:myFirstApp/screens/customers/new_Customer_screen.dart';
@@ -29,5 +30,6 @@ final Map<String, WidgetBuilder> routes = {
   NewCustomerScreen.routeName: (context) => NewCustomerScreen(),
   VisitCycleScreen.routeName: (context) => VisitCycleScreen(),
   RecieveCycleScreen.routeName: (context) => RecieveCycleScreen(),
-  ProfileScreen.routeName: (context) => ProfileScreen()
+  ProfileScreen.routeName: (context) => ProfileScreen(),
+  EditProfile.routeName: (context) => EditProfile()
 };

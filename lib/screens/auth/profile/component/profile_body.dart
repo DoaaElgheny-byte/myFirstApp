@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:date_picker_timeline/date_picker_timeline.dart';
-import 'package:myFirstApp/component/custom_card.dart';
 import 'package:myFirstApp/component/footer.dart';
 import 'package:myFirstApp/component/header.dart';
-import 'package:myFirstApp/models/visit_model.dart';
+import 'package:myFirstApp/screens/auth/profile/edit_profile_screen.dart';
 import 'package:myFirstApp/screens/auth/sign_in/sign_in_screen.dart';
 
 import 'package:myFirstApp/size_config.dart';
+
+import 'profileRow.dart';
 
 class ProfileBody extends StatefulWidget {
   @override
@@ -36,6 +36,25 @@ class _BodyState extends State<ProfileBody> {
                 Header(
                   title: '',
                   rightIconName: Icons.arrow_forward_sharp,
+                  leftIconName: [
+                    InkWell(
+                      onTap: ()=>Navigator.pushNamed(context, EditProfile.routeName),
+                      child: Container(
+                          width: 35,
+                          height: 35,
+                          decoration: BoxDecoration(
+                            color: Colors.green[100],
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                          child: Center(
+                            child: Icon(
+                              Icons.edit,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                          )),
+                    ),
+                  ],
                 ),
                 Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -84,272 +103,39 @@ class _BodyState extends State<ProfileBody> {
                               getProportionateScreenHeight(50),
                             ),
                             child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Container(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal:
-                                          getProportionateScreenWidth(15),
-                                      vertical:
-                                          getProportionateScreenHeight(15)),
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[100],
-                                    // color: Colors.green.withOpacity(0.2),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                          width:
-                                              getProportionateScreenWidth(35),
-                                          height:
-                                              getProportionateScreenHeight(45),
-                                          decoration: BoxDecoration(
-                                            color:
-                                                Colors.green.withOpacity(0.2),
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(10)),
-                                          ),
-                                          child: Icon(
-                                            Icons.location_on,
-                                            color: Colors.green,
-                                            size: 25,
-                                          )),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal:
-                                                getProportionateScreenWidth(
-                                                    20)),
-                                        child: Column(
-                                          children: [
-                                            Text(
-                                              "المنطقه",
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 18),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.only(
-                                                  top:
-                                                      getProportionateScreenHeight(
-                                                          8)),
-                                              child: Text(
-                                                "المعادي",
-                                                style: TextStyle(
-                                                    color: Colors.grey[400],
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 12),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
+                                ProfileRow(
+                                    iconName: Icons.location_on,
+                                    title: 'المنطقه',
+                                    content: 'المعادي'),
                                 SizedBox(
-                                  height: getProportionateScreenHeight(15),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal:
-                                          getProportionateScreenWidth(15),
-                                      vertical:
-                                          getProportionateScreenHeight(15)),
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[100],
-                                    // color: Colors.green.withOpacity(0.2),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                          width:
-                                              getProportionateScreenWidth(35),
-                                          height:
-                                              getProportionateScreenHeight(45),
-                                          decoration: BoxDecoration(
-                                            color:
-                                                Colors.green.withOpacity(0.2),
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(10)),
-                                          ),
-                                          child: Icon(
-                                            Icons.email_sharp,
-                                            color: Colors.green,
-                                            size: 25,
-                                          )),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal:
-                                                getProportionateScreenWidth(
-                                                    20)),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              "البريد الالكتروني",
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 18),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.only(
-                                                  top:
-                                                      getProportionateScreenHeight(
-                                                          8)),
-                                              child: Text(
-                                                "DODO@Nermeen.m7medsayed",
-                                                style: TextStyle(
-                                                    color: Colors.grey[400],
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 12),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
+                                    height: getProportionateScreenHeight(15)),
+                                ProfileRow(
+                                    iconName: Icons.email_sharp,
+                                    title: 'البريد الألكتروني',
+                                    content: 'DODO@Nermeen.M7medSayed'),
                                 SizedBox(
-                                  height: getProportionateScreenHeight(15),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal:
-                                          getProportionateScreenWidth(15),
-                                      vertical:
-                                          getProportionateScreenHeight(15)),
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[100],
-                                    // color: Colors.green.withOpacity(0.2),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                          width:
-                                              getProportionateScreenWidth(35),
-                                          height:
-                                              getProportionateScreenHeight(45),
-                                          decoration: BoxDecoration(
-                                            color:
-                                                Colors.green.withOpacity(0.2),
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(10)),
-                                          ),
-                                          child: Icon(
-                                            Icons.location_on,
-                                            color: Colors.green,
-                                            size: 25,
-                                          )),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal:
-                                                getProportionateScreenWidth(
-                                                    20)),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              "الهاتف",
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 18),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.only(
-                                                  top:
-                                                      getProportionateScreenHeight(
-                                                          8)),
-                                              child: Text(
-                                                "01062425848",
-                                                style: TextStyle(
-                                                    color: Colors.grey[400],
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 12),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Divider(
-                                  color: Colors.black,
-                                  height: 50,
-                                ),
+                                    height: getProportionateScreenHeight(15)),
+                                ProfileRow(
+                                    iconName: Icons.phone_android_outlined,
+                                    title: 'الهاتف',
+                                    content: '01062425848'),
+                                Divider(color: Colors.black, height: 50),
                                 InkWell(
                                   onTap: () {
                                     Navigator.pushReplacementNamed(
                                         context, SignInScreen.routeName);
                                   },
-                                  child: Container(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal:
-                                          getProportionateScreenWidth(5),
-                                    ),
-                                    decoration: BoxDecoration(
-                                      // color: Colors.grey[100],
-                                      // color: Colors.green.withOpacity(0.2),
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(10)),
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                            width:
-                                                getProportionateScreenWidth(35),
-                                            height:
-                                                getProportionateScreenHeight(
-                                                    45),
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  Colors.red.withOpacity(0.2),
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(10)),
-                                            ),
-                                            child: Icon(
-                                              Icons.logout,
-                                              color: Colors.red[300],
-                                              size: 25,
-                                            )),
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal:
-                                                  getProportionateScreenWidth(
-                                                      20)),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                "تسجيل الخروج",
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 18),
-                                              ),
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ),
+                                  child: ProfileRow(
+                                    iconName: Icons.logout,
+                                    hasBackground: false,
+                                    iconBackgroundColor: Colors.red,
+                                    title: 'تسجيل الخروج',
+                                    content: '',
+                                    hasContent: false,
+                                    isLogOut: true,
                                   ),
                                 ),
                               ],
